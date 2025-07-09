@@ -1,0 +1,13 @@
+# Core Requirements
+python>=3.6.0
+
+# Web Server
+http.server  # Built-in module, no version needed
+
+# Optional but recommended for development
+webbrowser  # Built-in module for opening browser
+os  # Built-in module for file operations
+sys  # Built-in module for system operations
+
+# Note: This application uses Python's built-in modules
+# No additional pip installations are required 

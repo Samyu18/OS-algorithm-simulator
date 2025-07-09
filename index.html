@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OS Scheduling Simulator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>OS Scheduling Simulator</h1>
+        
+        <div class="scheduling-type">
+            <label for="schedulingType">Select Scheduling Type:</label>
+            <select id="schedulingType">
+                <option value="cpu">CPU Scheduling</option>
+                <option value="disk">Disk Scheduling</option>
+                <option value="memory">Memory Management</option>
+            </select>
+        </div>
+
+        <!-- CPU Scheduling Section -->
+        <div id="cpuScheduling" class="scheduling-section">
+            <h2>CPU Scheduling</h2>
+            <div class="input-group">
+                <label for="processCount">Number of Processes:</label>
+                <input type="number" id="processCount" min="1" value="3">
+            </div>
+            <div id="processInputs"></div>
+            <div class="input-group">
+                <label for="cpuAlgorithm">Select Algorithm:</label>
+                <select id="cpuAlgorithm">
+                    <option value="fcfs">First Come First Serve (FCFS)</option>
+                    <option value="sjf">Shortest Job First (SJF)</option>
+                    <option value="priority">Priority Scheduling</option>
+                    <option value="rr">Round Robin (RR)</option>
+                </select>
+            </div>
+            <div id="quantumInput" class="input-group hidden">
+                <label for="timeQuantum">Time Quantum:</label>
+                <input type="number" id="timeQuantum" min="1" value="2">
+            </div>
+        </div>
+
+        <!-- Disk Scheduling Section -->
+        <div id="diskScheduling" class="scheduling-section hidden">
+            <h2>Disk Scheduling</h2>
+            <div class="input-group">
+                <label for="requestCount">Number of Requests:</label>
+                <input type="number" id="requestCount" min="1" value="5">
+            </div>
+            <div id="requestInputs"></div>
+            <div class="input-group">
+                <label for="headPosition">Initial Head Position:</label>
+                <input type="number" id="headPosition" min="0" value="50">
+            </div>
+            <div class="input-group">
+                <label for="diskAlgorithm">Select Algorithm:</label>
+                <select id="diskAlgorithm">
+                    <option value="fcfs">First Come First Serve (FCFS)</option>
+                    <option value="sstf">Shortest Seek Time First (SSTF)</option>
+                    <option value="scan">SCAN</option>
+                    <option value="cscan">C-SCAN</option>
+                    <option value="look">LOOK</option>
+                    <option value="clook">C-LOOK</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Memory Management Section -->
+        <div id="memoryScheduling" class="scheduling-section hidden">
+            <h2>Memory Management</h2>
+            <div class="input-group">
+                <label for="blockCount">Number of Memory Blocks:</label>
+                <input type="number" id="blockCount" min="1" value="4">
+            </div>
+            <div id="blockInputs"></div>
+            <div class="input-group">
+                <label for="processCountMem">Number of Processes:</label>
+                <input type="number" id="processCountMem" min="1" value="3">
+            </div>
+            <div id="processSizeInputs"></div>
+            <div class="input-group">
+                <label for="memoryAlgorithm">Select Algorithm:</label>
+                <select id="memoryAlgorithm">
+                    <option value="firstFit">First Fit</option>
+                    <option value="bestFit">Best Fit</option>
+                </select>
+            </div>
+        </div>
+
+        <button id="calculateBtn">Calculate</button>
+
+        <div id="results" class="hidden">
+            <h2>Results</h2>
+            <div id="ganttChart"></div>
+            <div id="statistics"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
